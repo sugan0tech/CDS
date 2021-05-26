@@ -1,0 +1,9 @@
+1.First node must be a head node. We should not use original 
+  name for traversing.
+2.Last node must have NULL pointer
+3.For connecting any two nodes:
+           temp1->next = temp2;
+4.For traversing from one node to another node:
+           temp2 = temp1->next;
+5.Duplicate the head node / any node :
+               temp  = head;
