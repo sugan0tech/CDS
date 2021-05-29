@@ -9,7 +9,7 @@ struct Node {
 void main() {
     int choice, n, pos_val, i;
     struct Node *Head = NULL, *new, *temp, *pre;
-    printf("1 for creating new Circular Linked List \n2 for printing Circular Linked List \n3 for adding element to first index \n4 for appending\n5 for adding element at desired place");
+    printf("1 for creating new Circular Linked List \n2 for printing Circular Linked List \n3 for adding element to first index \n4 for appending\n5 for adding element at desired place\n6 for removing a element");
     do
     {
         printf("\nEnter the option : ");
@@ -18,6 +18,7 @@ void main() {
            3 for adding a element to the begining of the list
            4 for appending a element to the end of tha list
            5 for adding a node before another node
+           6 for removing an element
         */
         scanf("%d", &choice);
         switch (choice)
@@ -58,6 +59,7 @@ void main() {
                 temp = temp->next;
             }
             printf("%d", temp->data);
+            printf(" -> Head (%d)", temp->next->data);
             break;
 
 
@@ -120,6 +122,26 @@ void main() {
             }
             break;
             
+
+        case 6:
+            // removing element 
+            printf("\n---Note you cant delete Head---");
+            temp = Head->next;
+            printf("\n Enter the num to be deleted :");
+            scanf("%d", &n);
+            while (temp != Head)
+            {
+                // comparing that pos_val to get access to it's previous
+                if (temp->data == n)
+                {
+                    pre->next = temp->next;
+                    break;
+                }
+                pre = temp;
+                temp = temp->next;
+            }
+            break;
+
 
         default:
             break;

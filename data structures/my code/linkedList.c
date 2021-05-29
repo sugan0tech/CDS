@@ -12,7 +12,7 @@ void main(){
 
     int choice, n, pos_val, i;
     struct Node *Head = NULL, *new, *temp, *pre;
-    printf("1 for creating new Linked List \n2 for printing Linked List \n3 for adding element to first index \n4 for appending\n5 for adding element at desired place");
+    printf("1 for creating new Linked List \n2 for printing Linked List \n3 for adding element to first index \n4 for appending\n5 for adding element at desired place\n6 for deleting an element");
     do
     {
         printf("\nEnter the option : ");
@@ -21,6 +21,7 @@ void main(){
            3 for adding a element to the begining of the list
            4 for appending a element to the end of tha list
            5 for adding a node before another node
+           6 for deleing an element
         */
         scanf("%d", &choice);
         switch (choice)
@@ -116,6 +117,25 @@ void main(){
             }
             break;
             
+            
+        case 6:
+            // removing element 
+            temp = Head;
+            printf("\n Enter the num to be deleted :");
+            scanf("%d", &n);
+            while (temp != NULL)
+            {
+                // comparing that pos_val to get access to it's previous
+                if (temp->data == n)
+                {
+                    pre->next = temp->next;
+                    break;
+                }
+                pre = temp;
+                temp = temp->next;
+            }
+            break;
+
 
         default:
             break;
