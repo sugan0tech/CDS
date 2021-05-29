@@ -1,0 +1,61 @@
+PFA
+#include<stdio.h>
+struct Node
+{
+    int data;
+    struct Node *next;
+};
+int main()
+{
+    int choice,ele;
+    struct Node *Top=NULL,*neww,*temp;
+    do
+    {
+        printf("Enter ur option1.Push 2.Pop 3.DIsplay\n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+           case 1:
+                printf("Enter the data to push:");
+                scanf("%d",&ele); //10
+                neww=(struct Node*)malloc(sizeof(struct Node));
+                neww->data=ele;
+                neww->next=NULL;
+                if(Top==NULL)
+                {
+                    Top = neww;
+                    temp = Top;
+                }
+                else
+                {
+                    neww->next = Top;
+                    Top = neww;
+                }
+           break;
+           case 2:
+                 if(Top==NULL)
+                   printf("Stack is underflow");
+                 else
+                 {
+                     temp = Top;
+                     Top= Top->next;
+                     free(Top);
+                 }
+           break;
+           case 3:
+                 if(Top==NULL)
+                 {
+                     printf("Stack is Empty");
+                 }
+                 else{
+                 temp=Top;
+                 while(temp!=NULL){
+                    printf("\n%d",temp->data);
+                    temp = temp->next;
+                 }
+                 }
+           break;
+        }
+    }while(choice<=3);
+    return 0;
+}
