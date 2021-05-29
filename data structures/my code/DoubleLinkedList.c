@@ -4,6 +4,7 @@ struct Node
 {
     int data ;
     struct Node *next;
+    struct Node *prev;
     
 };
 
@@ -12,12 +13,12 @@ void main(){
 
     int choice, n, pos_val, i;
     struct Node *Head = NULL, *new, *temp, *pre;
-    printf("1 for creating new Linked List \n2 for printing Linked List \n3 for adding element to first index \n4 for appending\n5 for adding element at desired place");
+    printf("1 for creating new Double Linked List \n2 for printing Double Linked List \n3 for adding element to first index \n4 for appending\n5 for adding element at desired place");
     do
     {
         printf("\nEnter the option : ");
-        /* 1 for creating new LinkedList 
-           2 for printing LinkedList
+        /* 1 for creating new Double LinkedList 
+           2 for printing Double LinkedList
            3 for adding a element to the begining of the list
            4 for appending a element to the end of tha list
            5 for adding a node before another node
@@ -26,7 +27,7 @@ void main(){
         switch (choice)
         {
         case 1:
-            // creation of LinkedList
+            // creation of Double LinkedList
             printf("\n Enter the node data :");
             scanf("%d", &n);
             while (n!=0)
@@ -34,13 +35,16 @@ void main(){
                 new = (struct Node *)malloc(sizeof(struct Node));
                 new->data = n;
                 new->next = NULL;
+                new->prev = NULL;
                 if(Head == NULL)
                 {
                     Head = new;
+                    Head->prev = NULL;
                     temp = Head;
                 }
                 else
                 {
+                    new->prev = temp;
                     temp->next = new;
                     temp = new;
                 }
@@ -51,14 +55,30 @@ void main(){
 
 
         case 2:
-            // Printing the LinkedList
+            // Printing the Double LinkedList
+            printf("\n by ascending ");
             temp = Head;
             printf("%d", temp->data);
             temp = temp->next;
             while (temp != NULL)
             {
                 printf(" -> %d", temp->data);
+                if (temp->next == NULL)
+                {
+                    pre = temp;
+                }
                 temp = temp->next;
+            }
+            printf(" - > NULL");
+
+            printf("\n by desending ");
+            temp = pre;
+            printf("%d", temp->data);
+            temp = temp->prev;
+            while (temp != NULL)
+            {
+                printf(" -> %d", temp->data);
+                temp = temp->prev;
             }
             printf(" - > NULL");
             break;
@@ -71,8 +91,10 @@ void main(){
             scanf("%d", &n);
             new = (struct Node *)malloc(sizeof(struct Node));
             new->data = n;
+            temp->prev = new;
             new->next = temp;
             Head = new;
+            Head->prev = NULL;
             break;
 
 
@@ -88,6 +110,7 @@ void main(){
             {
                 temp = temp->next;
             }
+            new->prev = temp;
             temp->next = new;
             break;
 
@@ -107,6 +130,8 @@ void main(){
                 // comparing that pos_val to get access to it's previous
                 if (temp->data == pos_val)
                 {
+                    new->prev = pre;
+                    temp->prev = new;
                     new->next = temp;
                     pre->next = new;
                     break;
