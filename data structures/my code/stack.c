@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+
 struct Node
 {
     int data;
@@ -8,27 +9,61 @@ struct Node
 
 void main()
 {
-    int choice;
+    int choice1;
     printf("Enter 1 for array based implementation, 2 for linked list based implementation ");
-    scanf("%d", &choice);
-    if (choice == 1)
+    scanf("%d", &choice1);
+    if (choice1 == 1)
     {
         printf("Array based implementaion is selected :)");
+        int limit, choice2, i;
+        i = 0;
+        printf("Enter the limit for the stack");
+        scanf("%d", &limit);
+        int arr[limit];
+        do
+        {
+        printf("Enter the choice :");
+        scanf("%d", &choice2);
+        switch(choice2)
+        {
+            case 1:
+                printf("Enter the new Top :");
+                scanf("%d", &arr[i]);
+                i++;
+                break;
+
+            case 2:
+                printf("Printing the stack ");
+                printf("Top\n");
+                for (limit = i; limit > 0; limit--)
+                {
+                    printf("%d \n", arr[limit - 1]);
+                }
+                break;
+
+            case 3:
+                printf("poped the top element ");
+                i--;
+                break;
+
+        }
+        }while(choice2 > 0);
+
     }
 
 
-    else if (choice == 2)
+    else if (choice1 == 2)
     {
         printf("Linked List based implementation is selected :)");
-        int choice2,n;
+        int choice3,n;
         struct Node *Top=NULL,*new,*temp;
 
         do
         {
             printf("Enter the choice 1 for adding , 2 for printing, 3 for pop");
-            scanf("%d", &choice2);
+            scanf("%d", &choice3);
 
-            switch(choice2)
+            switch(choice3)
             {
                 case 1:
                     printf("\nEnter the num");
@@ -73,7 +108,7 @@ void main()
 
                     break;
             }
-        }while(choice > 0);
+        }while(choice1 > 0);
     }
     
 
