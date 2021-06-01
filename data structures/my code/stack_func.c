@@ -15,12 +15,30 @@ void display();
 
 void main()
 {
-    push();
-    push();
-    push();
-    push();
-    pop();
-    display();
+    int opt;
+    printf("1 for push, 2 for pop, 3 for display ");
+    scanf("%d", &opt);
+    do
+    {
+        switch(opt)
+        {
+            case 1:
+                push();
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                display();
+                break;
+            default:
+                printf("Invalid");
+                break;
+        }
+        printf("1 for push, 2 for pop, 3 for display ");
+        scanf("%d", &opt);
+    } while (opt > 0);
+    
 }
 
 void push()
