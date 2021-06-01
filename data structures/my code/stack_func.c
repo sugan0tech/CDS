@@ -16,7 +16,7 @@ void display();
 void main()
 {
     int opt;
-    printf("1 for push, 2 for pop, 3 for display ");
+    printf("\n1 for push, 2 for pop, 3 for display ");
     scanf("%d", &opt);
     do
     {
@@ -35,7 +35,7 @@ void main()
                 printf("Invalid");
                 break;
         }
-        printf("1 for push, 2 for pop, 3 for display ");
+        printf("\n1 for push, 2 for pop, 3 for display ");
         scanf("%d", &opt);
     } while (opt > 0);
     
@@ -46,7 +46,7 @@ void push()
     int n;
     struct Node *new;
     new = (struct Node *)malloc(sizeof(struct Node));
-    printf("Enter the num :");
+    printf("\nEnter the num :");
     scanf("%d", &n);
     new->data = n;
     new->next = NULL;
@@ -67,14 +67,18 @@ void pop()
 {
     temp = Top;
     Top = temp->next;
+    printf("\n popped \n");
 }
+
 void display()
 {
     temp = Top;
+    printf("\n");
     while(temp != NULL)
     {
-        printf("\n%d\n", temp->data);
+        printf("%d\n", temp->data);
         temp = temp->next;
     }
+
     printf("Done with printing \n");
 }
