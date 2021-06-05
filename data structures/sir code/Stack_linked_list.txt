@@ -39,7 +39,6 @@ int main()
                  {
                      temp = Top;
                      Top= Top->next;
-                     free(Top);
                  }
            break;
            case 3:
