@@ -11,7 +11,7 @@ struct Node
 
 void main(){
 
-    int choice, n, pos_val, i;
+    int choice, n, val, i;
     struct Node *Head = NULL, *new, *temp, *pre;
     printf("1 for creating new Double Linked List \n2 for printing Double Linked List \n3 for adding element to first index \n4 for appending\n5 for adding element at desired place\n6 for deletion");
     do
@@ -23,6 +23,7 @@ void main(){
            4 for appending an element to the end of tha list
            5 for adding a node before another node
            6 for removing an element
+           7 for removing an element at a particular index
         */
         scanf("%d", &choice);
         switch (choice)
@@ -122,14 +123,14 @@ void main(){
             printf("\n Enter the num to be inserted :");
             scanf("%d", &n);
             printf("\n Enter the node to be inserted  before :");
-            scanf("%d", &pos_val);
+            scanf("%d", &val);
             new = (struct Node *)malloc(sizeof(struct Node));
             new->data = n;
             new->next = NULL;
             while (temp != NULL)
             {
                 // comparing that pos_val to get access to it's previous
-                if (temp->data == pos_val)
+                if (temp->data == val)
                 {
                     new->prev = pre;
                     temp->prev = new;
@@ -160,6 +161,29 @@ void main(){
                 pre = temp;
                 temp = temp->next;
             }
+            break;
+
+        case 7:
+            // removing element at a postion
+            temp = Head;
+            printf("\n Enter the node to be deleted  ");
+            scanf("%d", &val);
+            new = (struct Node *)malloc(sizeof(struct Node));
+            new->data = val;
+            new->next = NULL;
+            while (temp != NULL)
+            {
+                // comparing that val to get deleted
+                if (temp->data == val)
+                {
+                    temp->next->prev = temp->prev;
+                    temp->prev->next = temp->next;
+                    break;
+                }
+                pre = temp;
+                temp = temp->next;
+            }
+
             break;
 
 
