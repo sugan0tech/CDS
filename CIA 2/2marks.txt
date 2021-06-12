@@ -1,0 +1,24 @@
+1 Define ADT
+    Abstract Data Type is a type of object which has set of values and operation.
+    It's about how these operation performed.
+
+2 Diff btw Lnnear datastructure / Non linear data structure
+    ________________________________________________________________________________
+    |  Linear data structure                       Non linear data structure       |
+    |------------------------------------------------------------------------------|
+    |  The elements of this data                   Here the elements are arrnaged  |
+    |  structure is arranged sequentially          non linear manner.              |
+    |  or linearly.                                                                |
+    |------------------------------------------------------------------------------|
+    |  We can traverse to all the elements         We can't traverse all the       |
+    |  in a single run.                            elements in single run.         |
+    |------------------------------------------------------------------------------|
+    |  It can be easily implement in a             Not eay to implement in system  |
+    |  computer memory, which is arranged in       system memory.                  |
+    |  linear manner.                                                              |
+    |------------------------------------------------------------------------------|
+
+3 Different way for the implementation of List ADT. 
+    -> Singly Linked List 
+    -> Doubly Linked List 
+    -> Circular Linked List

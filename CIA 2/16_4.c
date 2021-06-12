@@ -7,9 +7,12 @@ struct Node
     struct Node *next;
 };
 
+struct Node *Head1=NULL, *Head2=NULL,*Head3 = NULL, *new, *temp1, *temp2, *temp3;
+void create(int);
+void display();
+
 void main()
 {
-    struct Node *Head1=NULL, *Head2=NULL,*Head3 = NULL, *new, *temp1, *temp2, *temp3;
     int choice, co, pwr;
     printf("\nEnter the coice");
     scanf("%d",&choice);
