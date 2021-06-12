@@ -48,7 +48,27 @@
     |                                              elements.                       |
     |------------------------------------------------------------------------------|
 
+6 Advantage of circular linked list over  Singly linked list.
+    -> It saves the time to move frome the last node to head node.
+    -> Hence it is easy to move to previous list via reverse direction.
 
+7 Advantages of ADT.
+    -> uses dynamic memory.
+    -> common operations can be done easily.
+    -> easy to use and understand.
+    -> better reusablity
+
+8 Applications of Stack.
+    -> can be used for infix to postfix conversion (vice versa).
+    -> paranthesis validation.
+    -> can be used in expression evaluation.
+    -> for backtracking problems and recrusive ones.
+    -> used for memory management.
+
+9 Infix to postfix.
+    (This will be a problem refer ppt and video materials)
+
+10 Advantages of cicular queue and it's types
 
 
 
