@@ -4,27 +4,27 @@
 int size = 0, i, limit, arr[20], Head = -1;
 
 void display();
-void create(int);
+void crt(int);
 void delete(int);
 void insert(int, int);
 
 void main()
 {
-    int num, choice, ind;
+    int number, coce, inde;
     printf("\nEnter the coice");
-    scanf("%d",&choice);
+    scanf("%d",&coce);
     do
     {
-        switch(choice)
+        switch(coce)
         {
             case 1:
                 printf("\n Enter the num");
-                scanf("%d",&num);
-                while (num)
+                scanf("%d",&number);
+                while (number)
                 {
-                    create(num);
+                    crt(number);
                     printf("\n Enter the num");
-                    scanf("%d",&num);
+                    scanf("%d",&number);
                 }
                 
                 break;
@@ -33,21 +33,21 @@ void main()
                 break;
             case 3:
                 printf("\n Enter the num");
-                scanf("%d",&num);
+                scanf("%d",&number);
                 printf("\n Enter the index");
-                scanf("%d",&ind);
-                insert(num, ind);
+                scanf("%d",&inde);
+                insert(number, inde);
                 break;
             case 4:
                 break;
         }
         printf("\nEnter the coice");
-        scanf("%d",&choice);
-    } while (choice);
+        scanf("%d",&coce);
+    } while (coce);
     
 
 }
-void create(int num)
+void crt(int num)
 {
     if (Head == -1)
     {
@@ -76,7 +76,6 @@ void insert(int num, int pos)
     int temp, temp2, i;
     for (i = 0; i <= size; i++)
     {
-        printf(" %d ", i);
         if (i == pos)
         {
             temp = arr[i];
@@ -89,6 +88,11 @@ void insert(int num, int pos)
             arr[i] = temp;
             temp = temp2;
         }
+        else
+        {
+            
+        }
+        
     }
     
 }
