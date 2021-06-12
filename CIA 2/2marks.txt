@@ -103,7 +103,38 @@
     check--;
     break;
 
-13 
+13 code for push in stack using linked list.
+    struct Node
+    {
+        int data;
+        struct Node *next;
+    };
+
+    struct Node *Top=NULL,*new,*temp;
+
+    void push()
+    {
+        int n;
+        struct Node *new;
+        new = (struct Node *)malloc(sizeof(struct Node));
+        printf("\nEnter the num :");
+        scanf("%d", &n);
+        new->data = n;
+        new->next = NULL;
+        if (Top == NULL)
+        {
+            Top = new;
+            Top->next = NULL;
+        }
+        else 
+        {
+            new->next = Top;
+            Top = new;
+        }
+        printf("pushed \n");
+    }
+
+
 
 
 
