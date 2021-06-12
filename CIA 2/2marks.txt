@@ -88,24 +88,26 @@ Kindly change the variable name and logic if possible.
         desending order priority quene
 
 12 Code for pop operation on stack using linke list.
+    <kindly change the variable>
+    <note this is only for reference >
     if(check <= 0)
     {
         printf("\nStack in Underflow\n");
         exit;
     }
-    printf("\nTop element is poped");
     temp = Top->next;
     Top = temp;
     check--;
     break;
 
 13 code for push in stack using linked list.
+    <kindly change the variable>
+    <note this is only for reference >
     void push()
     {
         int n;
         struct Node *new;
         new = (struct Node *)malloc(sizeof(struct Node));
-        printf("\nEnter the num :");
         scanf("%d", &n);
         new->data = n;
         new->next = NULL;
