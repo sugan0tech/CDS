@@ -1,3 +1,7 @@
+
+Kindly change the variable name and logic if possible.
+
+
 1 Define ADT
     Abstract Data Type is a type of object which has set of values and operation.
     It's about how these operation performed.
@@ -84,14 +88,6 @@
         desending order priority quene
 
 12 Code for pop operation on stack using linke list.
-    struct Node
-    {
-        int data;
-        struct Node *next;
-    };
-
-    struct Node *Top=NULL,*new,*temp;
-
     if(check <= 0)
     {
         printf("\nStack in Underflow\n");
@@ -104,14 +100,6 @@
     break;
 
 13 code for push in stack using linked list.
-    struct Node
-    {
-        int data;
-        struct Node *next;
-    };
-
-    struct Node *Top=NULL,*new,*temp;
-
     void push()
     {
         int n;
