@@ -68,7 +68,23 @@
 9 Infix to postfix.
     (This will be a problem refer ppt and video materials)
 
-10 Advantages of cicular queue and it's types
+10 Advantages of cicular queue over linear Queue
+    -> less amount of memory is needed
+    -> Hence memory can be utilized more efficiently
+    -> There is no oder of execution
+    -> Insertion and deletion can be done at any postion
+
+11 priority queue
+    It is an abstract data type similar to regular queue, In which
+    elements which higher priority is served before an element with 
+    low priority.
+    
+    Types:
+        Ascending order priority queue
+        desending order priority quene
+
+12 Code for pop operation on stack using linke list.
+    
 
 
 
