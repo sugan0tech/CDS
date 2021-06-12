@@ -135,7 +135,10 @@
     }
 
 
+14 code for search element.
+    Nod yet
 
-
-
-
+15 Application of queue
+    -> used for cpu seduling algorithm.
+    -> can be used for the asynchronous transfer.
+    -> can be used in routing/switches.
