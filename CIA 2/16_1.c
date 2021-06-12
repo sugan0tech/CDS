@@ -1,15 +1,16 @@
 //insertion and deletion on arraby based implementaion of a linked list
 #include<stdio.h>
 #include<stdlib.h>
-int size = 0, i, limit, arr[10], Head = -1;
+int size = 0, i, limit, arr[20], Head = -1;
 
 void display();
-void insert(int);
+void create(int);
 void delete(int);
+void insert(int, int);
 
 void main()
 {
-    int num, choice;
+    int num, choice, ind;
     printf("\nEnter the coice");
     scanf("%d",&choice);
     do
@@ -21,7 +22,7 @@ void main()
                 scanf("%d",&num);
                 while (num)
                 {
-                    insert(num);
+                    create(num);
                     printf("\n Enter the num");
                     scanf("%d",&num);
                 }
@@ -30,6 +31,15 @@ void main()
             case 2:
                 display();
                 break;
+            case 3:
+                printf("\n Enter the num");
+                scanf("%d",&num);
+                printf("\n Enter the index");
+                scanf("%d",&ind);
+                insert(num, ind);
+                break;
+            case 4:
+                break;
         }
         printf("\nEnter the coice");
         scanf("%d",&choice);
@@ -37,16 +47,7 @@ void main()
     
 
 }
-void display()
-{
-    printf("\n printing the linked list \n");
-    for(i = 0; i <= size; i++)
-    {
-        printf(" %d ->", arr[i]);
-    }
-    printf("NULL\n");
-}
-void insert(int num)
+void create(int num)
 {
     if (Head == -1)
     {
@@ -58,4 +59,36 @@ void insert(int num)
         size++;
         arr[size] = num;
     }
+}
+
+void display()
+{
+    printf("\n printing the linked list \n");
+    for(i = 0; i <= size; i++)
+    {
+        printf(" %d ->", arr[i]);
+    }
+    printf("NULL\n");
+}
+
+void insert(int num, int pos)
+{
+    int temp, temp2, i;
+    for (i = 0; i <= size; i++)
+    {
+        printf(" %d ", i);
+        if (i == pos)
+        {
+            temp = arr[i];
+            arr[i] = num;
+            size++;
+        }
+        else if (i > pos)
+        {
+            temp2 = arr[i];
+            arr[i] = temp;
+            temp = temp2;
+        }
+    }
+    
 }
