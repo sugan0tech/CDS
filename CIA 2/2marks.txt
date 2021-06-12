@@ -22,3 +22,30 @@
     -> Singly Linked List 
     -> Doubly Linked List 
     -> Circular Linked List
+
+4 Advantages of Linked List over array.
+    In Linked List the list operations like insertion, appending and deletion can be 
+    made easily. For array for each operation we have to reassing the array. 
+
+    Size of array is fixed but for Linked List the size varies dynamically depending on the 
+    us input. 
+
+5 Singly linked List vs Doubly Linked List.
+    ________________________________________________________________________________
+    |  Singly Linked List                            Doubly Linked List            |
+    |------------------------------------------------------------------------------|
+    |  stores addres of the next node              Stores addresss of the next node|
+    |                                              previous node.                  |
+    |------------------------------------------------------------------------------|
+    |  We can traverse to all the elements         We can't traverse all the       |
+    |  in a single run.                            elements in single run.         |
+    |------------------------------------------------------------------------------|
+    |  It can be easily implement in a             Not eay to implement in system  |
+    |  computer memory, which is arranged in       system memory.                  |
+    |  linear manner.                                                              |
+    |------------------------------------------------------------------------------|
+
+
+
+
+
