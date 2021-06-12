@@ -19,9 +19,9 @@
     |------------------------------------------------------------------------------|
 
 3 Different way for the implementation of List ADT. 
-    -> Singly Linked List 
-    -> Doubly Linked List 
-    -> Circular Linked List
+    -> List 
+    -> Stack
+    -> queue
 
 4 Advantages of Linked List over array.
     In Linked List the list operations like insertion, appending and deletion can be 
@@ -84,7 +84,7 @@
         desending order priority quene
 
 12 Code for pop operation on stack using linke list.
-    
+
 
 
 
