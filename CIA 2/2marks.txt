@@ -37,12 +37,15 @@
     |  stores addres of the next node              Stores addresss of the next node|
     |                                              previous node.                  |
     |------------------------------------------------------------------------------|
-    |  We can traverse to all the elements         We can't traverse all the       |
-    |  in a single run.                            elements in single run.         |
+    |  We can traverse to all the elements         We can traverse to all the      |
+    |  using next node.                            elements using next and         |         
+    |                                              previous node.                  |
     |------------------------------------------------------------------------------|
-    |  It can be easily implement in a             Not eay to implement in system  |
-    |  computer memory, which is arranged in       system memory.                  |
-    |  linear manner.                                                              |
+    |  it occupies less amount of memory.          It occupies more amount of      |
+    |                                              system memory.                  |
+    |------------------------------------------------------------------------------|
+    |  Less efficiency in accessing elements.      high efficiency in accessing    |
+    |                                              elements.                       |
     |------------------------------------------------------------------------------|
 
 
