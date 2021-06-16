@@ -12,6 +12,7 @@ void main()
     int choice1;
     printf("Enter 1 for array based implementation, 2 for linked list based implementation ");
     scanf("%d", &choice1);
+    // Array based implementation goes here
     if (choice1 == 1)
     {
         printf("Array based implementaion is selected :)");
@@ -52,6 +53,7 @@ void main()
     }
 
 
+    // Linked List based implementation 
     else if (choice1 == 2)
     {
         printf("Linked List based implementation is selected :)");

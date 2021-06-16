@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define size 5
-char stack[size], eq[10], res[10];
+#define size 10
+char stack[size], eq[20], res[20];
 int Top = -1, base = 0, i, j, boo = 1;
 
 
@@ -45,7 +45,7 @@ void main()
     for(i = Top; i >= 0; i--)
     {
         
-        printf("%c", stack[i]);
+        printf(" %c", stack[i]);
     }
     
 
@@ -83,7 +83,7 @@ void display()
     int i;
     for(i = 0; i <= Top; i++)
     {
-        printf("%c", stack[i]);
+        printf(" %c", stack[i]);
     }
 }
 
@@ -123,7 +123,7 @@ void validate(char ch)
     else
     {
 
-        printf("%c",pop());
+        printf(" %c",pop());
         goto First;
     }
     
@@ -152,57 +152,3 @@ void special(char ch)
         
     }
 }
-
-// void validate(char ch)
-// {
-//     char loop;
-//     Here:
-//     if (Top == -1)
-//     {
-//         push(ch);
-//     }
-//     else
-//     {
-//         if (ch == '(')
-//         {
-//             boo = 0;
-//         }
-//         if (opre(ch) > opre(stack[Top]) && boo)
-//         {
-//             push(ch);
-//         }
-//         else if (boo)
-//         {
-//             printf("%c", pop());
-//             goto Here;
-//         }
-//         else if (boo == 0)
-//         {
-//             Here2:
-//             if (ch == ')')
-//             {
-//                 boo = 1;
-//                 loop = pop();
-//                 while(loop != '(')
-//                 {
-//                     printf("%c loop\n", loop);
-//                     loop = pop();
-//                 }
-//                 pop();
-//             }
-//             if (stack[Top] == '(')
-//             {
-//                 push(ch);
-//             }
-//             else if (opre(ch) > opre(stack[Top]))
-//             {
-//                 push(ch);
-//             }
-//             else
-//             {
-//                 printf("\n%c in else\n", pop());
-//                 goto Here2;
-//             }
-//         }
-//     }
-// }

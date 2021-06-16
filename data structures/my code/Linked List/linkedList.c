@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 struct Node
 {
     int data ;
@@ -16,7 +17,7 @@ void main(){
     do
     {
         printf("\nEnter the option : ");
-        /* 1 for creating new LinkedList 
+        /* 2 for creating new LinkedList 
            2 for printing LinkedList
            3 for adding a element to the begining of the list
            4 for appending a element to the end of tha list
@@ -145,5 +146,6 @@ void main(){
     printf("----*----*----*----*----*----");
     printf("\nThanks for using this code :)\n");
     printf("----*----*----*----*----*----");
+    //Done by 20EUCS147
     
 }
