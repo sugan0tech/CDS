@@ -133,8 +133,8 @@ void delete(struct Node *head, int n)
 
 void main(){
 
-    int choice, n, pos_val, i;
-    struct Node *Head = NULL, *new, *temp, *pre;
+    int choice, n;
+    struct Node *Head = NULL;
     printf("1 for creating new Linked List \n2 for printing Linked List \n3 for adding element to first index \n4 for appending\n5 for adding element at desired place\n6 for deleting an element");
     do
     {
