@@ -49,7 +49,6 @@ void enqeue()
     {
         qeue[++rear] = n;
     }
-    printf("\n%d %d", front, rear);
 
 }
 
@@ -62,9 +61,10 @@ void deqeue()
 void print()
 {
     int i;
-    for ( i = front; i < rear; i++)
+    for ( i = front; i <= rear; i++)
     {
         printf(" %d", qeue[i]);
     }
     
+    printf("\nFront : %d Rear : %d", qeue[front], qeue[rear]);
 }
