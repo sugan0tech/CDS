@@ -17,7 +17,7 @@ int main()
                 }
                 else
                 {
-                    printf("\n place is there ");
+                    printf("\n Enter the num :");
                     scanf("%d", &ele);
                     if(front == -1)
                     {
@@ -38,10 +38,9 @@ int main()
                 printf("%d", Cq[i]);
                 break;
             case 3:
+                front = (front + 1)%max;
                 break;
-            default:
-                printf("Error");
         }
-    } while (choice > 0);
+    } while (choice);
     
 }
