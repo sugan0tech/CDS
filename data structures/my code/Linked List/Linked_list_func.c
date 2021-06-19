@@ -20,11 +20,13 @@ struct Node *create(struct Node *head)
         new = (struct Node *)malloc(sizeof(struct Node));
         new->data = n;
         new->next = NULL;
+        // fron initial value of head
         if(head == NULL)
         {
             head = new;
             temp = head;
         }
+        // for non empty head case
         else
         {
             temp->next = new;
@@ -42,11 +44,12 @@ struct Node *create(struct Node *head)
 struct Node *begining(struct Node *head, int n)
 {
 
+    // adding a node as Head
     struct Node *temp, *new;
     new = (struct Node *)malloc(sizeof(struct Node));
     new->data = n;
     temp = head;
-    head = new;
+    head = new;// simple swaping Head.next <-> Head
     head->next = temp;
     return head;
 }
@@ -56,6 +59,7 @@ void print(struct Node *node)
 {
     printf("%d", node->data);
     node = node->next;
+    // usual linked list print loop
     while (node != NULL)
     {
         printf(" -> %d", node->data);
@@ -68,16 +72,20 @@ void print(struct Node *node)
 void insert(struct Node *head)
 {
     // adding element at a postion
+    // value declaration
     struct Node *new, *temp, *pre;
     int n, pos_val;
-    temp = head;
+    // getting values
     printf("\n Enter the num to be inserted :");
     scanf("%d", &n);
     printf("\n Enter the node to be inserted  before :");
     scanf("%d", &pos_val);
+    // assigning values
+    temp = head;
     new = (struct Node *)malloc(sizeof(struct Node));
     new->data = n;
     new->next = NULL;
+
     while (temp != NULL)
     {
         // comparing that pos_val to get access to it's previous
@@ -95,10 +103,13 @@ void insert(struct Node *head)
 
 void append(struct Node *head)
 {
+    // declaring
     int n;
     struct Node *new, *temp;
+    // getting
     printf("\nEnter the num to be appended :");
     scanf("%d", &n);
+    // assigning and memory allotment
     new  = (struct Node *)malloc(sizeof(struct Node));
     new->data = n;
     new->next = NULL;
@@ -185,16 +196,15 @@ void main(){
             scanf("%d", &n);
             delete(Head, n);
             break;
-
-
-        default:
-            break;
         }
 
-    } while (choice > 0);
+
+    } while (choice);
+
+
     printf("----*----*----*----*----*----");
     printf("\nThanks for using this code :)\n");
     printf("----*----*----*----*----*----");
-    //Done by 20EUCS147
+    //Done by sugan0tech
     
 }

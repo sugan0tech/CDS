@@ -1,5 +1,6 @@
 #include<stdio.h>
 #define max 5
+
 int main()
 {
     int Cq[max], front = -1, rear = -1;
@@ -8,6 +9,7 @@ int main()
     {
         printf("\nEnter the choice");
         scanf("%d", &choice);
+
         switch(choice)
         {
             case 1:
@@ -30,6 +32,8 @@ int main()
                     Cq[rear] = ele;
                 }
                 break;
+
+
             case 2:
                 for(i = front; i != rear; (++i)%max )
                 {
@@ -37,10 +41,20 @@ int main()
                 }
                 printf("%d", Cq[i]);
                 break;
+
+
             case 3:
                 front = (front + 1)%max;
                 break;
+
+
         }
     } while (choice);
+
+
+    printf("----*----*----*----*----*----");
+    printf("\nThanks for using this code :)\n");
+    printf("----*----*----*----*----*----");
+    //Done by sugan0tech
     
 }

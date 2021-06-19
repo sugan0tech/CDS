@@ -1,77 +1,114 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define MAX 10
-struct P_Queue
+
+// node formation here it have additional data of priority value
+struct Node
 {
     int data;
     int priority;
+    struct Node *next;
 };
 
-int main()
-{
-   struct P_Queue p[MAX];
-   int choice,prior,ele,i,rear=-1;
-   do
-   {
-       printf("Option 1.Insertion 2.Deletion 3.Display");
-       scanf("%d",&choice);
-       switch(choice)
-       {
-         case 1:
-                 printf("Enter the data:");
-                 scanf("%d",&ele);
-                 printf("Enter the priority");
-                 scanf("%d",&prior);
-                 if(rear==-1){
-                    p[++rear].data=ele;
-                    p[rear].priority=prior;
-                 }
-                 else{
-                    p[++rear].data=ele;
-                    p[rear].priority=prior;
-                 }
-                Sort(p,rear);
 
-         break;
-         case 2:
-                if(rear==-1)
-                    printf("Queue is empty");
+void main()
+{
+    struct Node *Front=NULL,*Rear=NULL,*temp,*new;
+    int choice,element,priority;
+    do
+    {
+        printf("\n1 Insertion\n2 Deletion\n3 DIsplay");
+        printf("\nEnter the choice :");
+        scanf("%d",&choice);
+
+        switch(choice)
+        {
+            case 1:
+                // getting
+                printf("Enter the data:");
+                scanf("%d",&element);
+                printf("Enter the priority:");
+                scanf("%d",&priority);
+                // assignments and allocations
+                new=(struct Node*)malloc(sizeof(struct Node));
+                new->data=element;
+                new->priority=priority;
+                new->next=NULL;
+
+                if(Front==NULL)
+                {
+                    Front  = new;
+                    Rear = Front;
+                }
                 else
                 {
-                    for(i=0;i<=rear;i++){
-                        p[i].data = p[i+1].data;
-                        p[i].priority=p[i+1].priority;
+                    if(new->priority > Front->priority)
+                    {
+                        Front->next = new;
+                        Rear = new;
                     }
-                    rear--;
+                    else if(new->priority < Rear->priority)
+                    {
+                        new->next = Front;
+                        Front = new;
+                    }
+                    else{
+                        temp=Front;
+                        while(temp->next!=NULL)
+                        {
+                            if(new->priority>temp->priority && new->priority<temp->next->priority)
+                            {
+                                new->next  = temp->next;
+                                temp->next = new;
+                                break;
+                            }
+                        temp =temp->next;
+                        }
+                    }
                 }
+            break;
 
-         break;
-         case 3:
-                for(i=0;i<=rear;i++)
-                {
-                    printf("%d %d",p[i].data,p[i].priority);
-                    printf("\n");
+
+            case 2:
+                    if(Front==NULL)
+                        printf("\nQueue is empty");
+                    else
+                    {
+                        temp=Front;
+                        Front = Front->next;
+                        free(temp);
+                    }
+                break;
+
+
+            case 3:
+                if(Front==NULL)
+                    printf("\nQueue is empty");
+                else{
+                    temp=Front;
+                    printf("\n --- Ascending order ---");
+                    printf("\nDequeue region Front");
+                    printf("\nFront |-");
+                    while(temp->next!=NULL)
+                    {
+                        printf(" data :%d priority :%d <-",temp->data,temp->priority);
+                        temp=temp->next;
+                    }
+                    printf(" data :%d priority :%d ",temp->data,temp->priority);
+                    printf("-| Rear");
+                    printf("\nEnqueue region Rear");
                 }
-         break;
-       }
-   }while(choice<=3);
-   return 0;
-}
-void Sort(struct P_Queue p[],int rear)
-{
-    int i,j;
-    for(i=0;i<=rear;i++)
-    {
-        for(j=i+1;j<=rear;j++)
-        {
-            if(p[i].priority<p[j].priority){
-            int data=p[i].data;
-            int prior=p[i].priority;
-            p[i].data=p[j].data;
-            p[i].priority=p[j].priority;
-            p[j].data=data;
-            p[j].priority=prior;
-           }
+                break;
+
+
         }
-    }
+
+    }while(choice);
+
+
+    printf("----*----*----*----*----*----");
+    printf("\nThanks for using this code :)\n");
+    printf("----*----*----*----*----*----");
+    //Done by sugan0tech
+
+
 }

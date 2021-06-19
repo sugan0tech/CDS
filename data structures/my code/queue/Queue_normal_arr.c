@@ -2,6 +2,7 @@
 #define size 10
 int rear = -1, front = -1, qeue[size];
 
+//function declaration definition will be at the bottom
 void enqeue();
 void deqeue();
 void print();
@@ -19,18 +20,30 @@ void main()
             case 1:
                 enqeue();
                 break;
+
+
             case 2:
                 print();
                 break;
+
+
             case 3:
                 deqeue();
                 break;
+
+
         }
 
 
         printf("\nEnter opt :");
         scanf("%d", &boo);
     } while (boo);
+
+
+    printf("----*----*----*----*----*----");
+    printf("\nThanks for using this code :)\n");
+    printf("----*----*----*----*----*----");
+    //Done by sugan0tech
     
 }
 

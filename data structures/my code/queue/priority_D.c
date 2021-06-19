@@ -1,87 +1,112 @@
 #include<stdio.h>
 #include<stdlib.h>
+
+// node formation here it have additional data of priority value
 struct Node
 {
     int data;
     int priority;
     struct Node *next;
 };
-int main()
+
+void main()
 {
-    struct Node *front=NULL,*rear=NULL,*temp,*neww;
-    int choice,ele,prior;
+    struct Node *Front=NULL,*Rear=NULL,*temp,*new;
+    int choice,element,priority;
+
     do
     {
-        printf("1.Insertion 2.Deletion 3.DIsplay");
+        printf("\n1 Insertion\n2 Deletion\n3 DIsplay");
+        printf("\nEnter the choice :");
         scanf("%d",&choice);
+
         switch(choice)
         {
-           case 1:
-                   printf("Enter the data:");
-                   scanf("%d",&ele);
-                   printf("Enter the priority:");
-                   scanf("%d",&prior);
-                   neww=(struct Node*)malloc(sizeof(struct Node));
-                   neww->data=ele;
-                   neww->priority=prior;
-                   neww->next=NULL;
-                   if(front==NULL)
-                   {
-                       front  = neww;
-                       rear = front;
-                   }
-                   else{
-                       if(neww->priority<front->priority)
+            case 1:
+                // getting
+                printf("Enter the data:");
+                scanf("%d",&element);
+                printf("Enter the priority:");
+                scanf("%d",&priority);
+                // assignments and allocations
+                new=(struct Node*)malloc(sizeof(struct Node));
+                new->data=element;
+                new->priority=priority;
+                new->next=NULL;
+
+                if(Front==NULL)
+                {
+                    Front  = new;
+                    Rear = Front;
+                }
+                else
+                {
+                    if(new->priority < Front->priority)
+                    {
+                        Front->next = new;
+                        Rear = new;
+                    }
+                    else if(new->priority > Rear->priority)
+                    {
+                        new->next = Front;
+                        Front = new;
+                    }
+                    else{
+                        temp=Front;
+                        while(temp->next!=NULL)
                         {
-                            neww->next=front;
-                            front = neww;
+                            if(new->priority>temp->priority && new->priority<temp->next->priority)
+                            {
+                                new->next  = temp->next;
+                                temp->next = new;
+                                break;
+                            }
+                        temp =temp->next;
                         }
-                        else if(neww->priority >rear->priority)
-                        {
-                            rear->next = neww;
-                            rear = neww;
                         }
-                        else{
-                          temp=front;
-                          while(temp->next!=NULL)
-                          {
-                              if(neww->priority>temp->priority && neww->priority<temp->next->priority)
-                              {
-                                  neww->next  = temp->next;
-                                  temp->next = neww;
-                                  break;
-                              }
-                             temp =temp->next;
-                          }
-                        }
-                   }
-           break;
-           case 2:
-                    if(front==NULL)
-                        printf("Queue is empty0");
+                }
+            break;
+            case 2:
+                    if(Front==NULL)
+                        printf("\nQueue is empty");
                     else
                     {
-                        temp=front;
-                        front = front->next;
+                        temp=Front;
+                        Front = Front->next;
                         free(temp);
                     }
-           break;
-           case 3:
-                if(front==NULL)
-                    printf("QUeue is empty");
+            break;
+
+
+            case 3:
+                if(Front==NULL)
+                    printf("\nQueue is empty");
                 else{
-                    temp=front;
-                    while(temp!=NULL)
+                    temp=Front;
+                    printf("\n --- Desending order ---");
+                    printf("\nDequeue region Front");
+                    printf("\nFront |-");
+                    while(temp->next!=NULL)
                     {
-                        printf("[%d %d] ->",temp->data,temp->priority);
+                        printf(" data :%d priority :%d <-",temp->data,temp->priority);
                         temp=temp->next;
                     }
+                    printf(" data :%d priority :%d ",temp->data,temp->priority);
+                    printf("-| Rear");
+                    printf("\nEnqueue region Rear");
                 }
-           break;
+            break;
+
+
         }
 
-    }while(choice<=3);
+    }while(choice);
 
 
-    return 0;
+    printf("----*----*----*----*----*----");
+    printf("\nThanks for using this code :)\n");
+    printf("----*----*----*----*----*----");
+    //Done by sugan0tech
+
+
 }

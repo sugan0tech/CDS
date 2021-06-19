@@ -10,11 +10,14 @@ struct Node
 
 void main()
 {
+    // declarations
     struct Node *Rear = NULL, *Front = NULL, *temp, *new;
     int n, option;
+
     printf("1 for creation\n2 for enqueue\n3 for print\n4 for dequeue");
     printf("\nEnter your option :");
     scanf("%d", &option);
+
     do
     {
         switch (option)
@@ -27,6 +30,7 @@ void main()
                     new = (struct Node *)malloc(sizeof(struct Node));
                     new->data = n;
                     new->next = NULL;
+
                     if(Front == NULL)
                     {
                         Front = new;
@@ -44,15 +48,21 @@ void main()
                     
                 }while(n  != 0);
                 break;
+
+
             case 2:
-                new = (struct Node *)malloc(sizeof(struct Node));
+                //getting
                 printf("\n Enter the num :");
                 scanf("%d", &n);
+                // assignment and allocation
+                new = (struct Node *)malloc(sizeof(struct Node));
                 new->data = n;
                 new->next = NULL;
                 Rear->next = new;
                 Rear = new;
                 break;
+
+
             case 3:
                 temp = Front;
                 while (temp)
@@ -63,13 +73,23 @@ void main()
                 printf("\nFront : %d Rear : %d", Front->data, Rear->data);
                 
                 break;
+
+
             case 4:
                 temp = Front;
                 Front = temp->next;
                 break;
+
+
         }
         printf("\nEnter your option :");
         scanf("%d", &option);
     } while (option);
+
+
+    printf("----*----*----*----*----*----");
+    printf("\nThanks for using this code :)\n");
+    printf("----*----*----*----*----*----");
+    //Done by sugan0tech
     
 }
