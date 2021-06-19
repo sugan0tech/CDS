@@ -9,6 +9,7 @@ struct Node
     struct Node *next;
 };
 
+
 void main()
 {
     struct Node *Front=NULL,*Rear=NULL,*temp,*new;
@@ -66,6 +67,8 @@ void main()
                         }
                 }
             break;
+
+
             case 2:
                     if(Front==NULL)
                         printf("\nQueue is empty");
